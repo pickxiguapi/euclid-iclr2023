@@ -1,0 +1,49 @@
+# environment
+task: walker-walk
+agent: disagreement
+reward_free: true
+use_encoder: true
+update_every_steps: 2
+modality: 'state'
+action_repeat: ???
+discount: 0.99
+episode_length: 1000/${action_repeat}
+train_steps: 2001000/${action_repeat}
+
+# buffer
+batch_size: 1024
+max_buffer_size: 1000000
+horizon: 0
+per_alpha: 0.6
+per_beta: 0.4
+
+# learning
+lr: 1e-4
+seed_steps: 0
+tau: 0.01
+std_schedule: linear(0.5, 0.05, 25000)
+
+# model
+rho: 0.5
+reward_coef: 0.5
+consistency_coef: 2
+grad_clip_norm: 10
+
+# architecture
+enc_dim: 256
+mlp_dim: 1024
+latent_dim: 50
+
+# wandb
+use_wandb: false
+wandb_project: None
+wandb_entity: None
+
+# misc
+seed: 0
+exp_name: None
+eval_freq: 40000
+eval_episodes: 5
+save_video: false
+save_model: true
+snapshot: [100000, 250000, 500000, 750000, 1000000, 1500000, 2000000]

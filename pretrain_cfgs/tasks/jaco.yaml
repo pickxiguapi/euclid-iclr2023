@@ -1,0 +1,3 @@
+# environment
+action_repeat: 1
+episode_length: 250

@@ -1,0 +1,3 @@
+latent_dim: 100
+seed_steps: 20000
+action_repeat: 1
